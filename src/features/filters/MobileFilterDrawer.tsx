@@ -1,8 +1,12 @@
-import type { IMobileFilterDrawerProps } from '../../types/filter.types';
-import type { SystemType, CoatingType, BuildingType } from '../../types/filter.types';
-import SearchInput from '../../components/SearchInput';
-import FilterGroup from './FilterGroup';
-import { useEffect } from 'react';
+import type { IMobileFilterDrawerProps } from "../../types/filter.types";
+import type {
+  SystemType,
+  CoatingType,
+  BuildingType,
+} from "../../types/map.types";
+import SearchInput from "../../components/SearchInput";
+import FilterGroup from "./FilterGroup";
+import { useEffect } from "react";
 
 const MobileFilterDrawer = ({
   isOpen,
@@ -18,12 +22,12 @@ const MobileFilterDrawer = ({
   // Lock body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -62,8 +66,18 @@ const MobileFilterDrawer = ({
               className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               aria-label="Закрыть"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -84,30 +98,30 @@ const MobileFilterDrawer = ({
             title="Системы"
             options={availableOptions.systems}
             selected={filterState.systems}
-            onChange={(value) => onFilterChange('systems', value)}
+            onChange={(value) => onFilterChange("systems", value)}
           />
           <FilterGroup<CoatingType>
             title="Покрытие"
             options={availableOptions.coatings}
             selected={filterState.coatings}
-            onChange={(value) => onFilterChange('coatings', value)}
+            onChange={(value) => onFilterChange("coatings", value)}
           />
           <FilterGroup<BuildingType>
             title="Тип объекта"
             options={availableOptions.buildingTypes}
             selected={filterState.buildingTypes}
-            onChange={(value) => onFilterChange('buildingTypes', value)}
+            onChange={(value) => onFilterChange("buildingTypes", value)}
           />
         </div>
 
         {/* Footer */}
         <div className="px-5 py-4 border-t border-gray-200 dark:border-gray-800">
           <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-            Показано{' '}
+            Показано{" "}
             <span className="font-medium text-gray-900 dark:text-white">
               {filteredCount}
-            </span>{' '}
-            из{' '}
+            </span>{" "}
+            из{" "}
             <span className="font-medium text-gray-900 dark:text-white">
               {totalCount}
             </span>

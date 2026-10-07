@@ -1,6 +1,11 @@
-import type { IFilterSidebarProps, SystemType, CoatingType, BuildingType } from '../../types/filter.types';
-import SearchInput from '../../components/SearchInput';
-import FilterGroup from './FilterGroup';
+import type { IFilterSidebarProps } from "../../types/filter.types";
+import type {
+  SystemType,
+  CoatingType,
+  BuildingType,
+} from "../../types/map.types";
+import SearchInput from "../../components/SearchInput";
+import FilterGroup from "./FilterGroup";
 
 const FilterSidebar = ({
   filterState,
@@ -39,30 +44,30 @@ const FilterSidebar = ({
           title="Системы"
           options={availableOptions.systems}
           selected={filterState.systems}
-          onChange={(value) => onFilterChange('systems', value)}
+          onChange={(value) => onFilterChange("systems", value)}
         />
         <FilterGroup<CoatingType>
           title="Покрытие"
           options={availableOptions.coatings}
           selected={filterState.coatings}
-          onChange={(value) => onFilterChange('coatings', value)}
+          onChange={(value) => onFilterChange("coatings", value)}
         />
         <FilterGroup<BuildingType>
           title="Тип объекта"
           options={availableOptions.buildingTypes}
           selected={filterState.buildingTypes}
-          onChange={(value) => onFilterChange('buildingTypes', value)}
+          onChange={(value) => onFilterChange("buildingTypes", value)}
         />
       </div>
 
       {/* Footer with count */}
       <div className="p-4 border-t border-gray-200 dark:border-gray-800">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          Показано{' '}
+          Показано{" "}
           <span className="font-medium text-gray-900 dark:text-white">
             {filteredCount}
-          </span>{' '}
-          из{' '}
+          </span>{" "}
+          из{" "}
           <span className="font-medium text-gray-900 dark:text-white">
             {totalCount}
           </span>

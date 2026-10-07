@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import type { IProjectLocation } from '../../types/map.types';
-import type { IAvailableFilterOptions, SystemType, CoatingType, BuildingType } from '../../types/filter.types';
+import type { IAvailableFilterOptions, } from '../../types/filter.types';
+import type {SystemType,  CoatingType,  BuildingType} from "../../types/map.types"
+
 
 export const useFilterOptions = (locations: IProjectLocation[]): IAvailableFilterOptions => {
   return useMemo(() => {
