@@ -8,7 +8,8 @@ import CustomPopup from "./CustomPopup";
 
 // Yandex Maps API key from environment
 const YMAPS_API_KEY =
-  import.meta.env.VITE_YANDEX_MAPS_API_KEY || "YOUR_API_KEY_HERE";
+  import.meta.env.VITE_YANDEX_MAPS_API_KEY ||
+  "4435c9da-a1d3-436e-8391-c68f5dbc85f7";
 
 /** Глобальный тип ymaps3 */
 type Ymaps3Type = any;
